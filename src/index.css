@@ -21,3 +21,7 @@ h1 {
   font-family: 'DynaPuff';
   font-weight: 600;
 }
+
+.navbar-active {
+  color: #fe5617;
+}
