@@ -15,9 +15,9 @@ const navigation = [
 
 const HeaderTop = () => {
   return (
-    <div className='container py-2 hidden xl:block'>
-      <div className='grid grid-cols-12 text-dark'>
-        <div className='col-span-2 flex flex-row justify-center items-center'>
+    <div className='container hidden py-2 xl:block'>
+      <div className='text-dark grid grid-cols-12'>
+        <div className='col-span-2 flex flex-row items-center justify-center'>
           <div className='text-[#fe5716]'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -25,7 +25,7 @@ const HeaderTop = () => {
               viewBox='0 0 24 24'
               strokeWidth={1.5}
               stroke='currentColor'
-              className='w-5 h-5'
+              className='h-5 w-5'
               role='img'
               aria-hidden='true'
             >
@@ -36,11 +36,11 @@ const HeaderTop = () => {
               />
             </svg>
           </div>
-          <span className='ml-2 hover:text-[#fe5716] transition duration-300 cursor-pointer'>
+          <span className='ml-2 cursor-pointer transition duration-300 hover:text-[#fe5716]'>
             support.patte@gmail.com
           </span>
         </div>
-        <div className='col-span-2 flex flex-row justify-center items-center'>
+        <div className='col-span-2 flex flex-row items-center justify-center'>
           <div className='text-[#fe5716]'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -48,7 +48,7 @@ const HeaderTop = () => {
               viewBox='0 0 24 24'
               strokeWidth={1.5}
               stroke='currentColor'
-              className='w-5 h-5'
+              className='h-5 w-5'
               role='img'
               aria-hidden='true'
             >
@@ -59,15 +59,15 @@ const HeaderTop = () => {
               />
             </svg>
           </div>
-          <span className='ml-2 hover:text-[#fe5716] transition duration-300 cursor-pointer'>+0235 999 0000</span>
+          <span className='ml-2 cursor-pointer transition duration-300 hover:text-[#fe5716]'>+0235 999 0000</span>
         </div>
-        <div className='col-span-8 place-self-end  flex flex-row justify-center items-center'>
+        <div className='col-span-8 flex flex-row items-center justify-center place-self-end'>
           <div>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 16 16'
               fill='currentColor'
-              className='w-5 h-5'
+              className='h-5 w-5'
               role='img'
               aria-hidden='true'
             >
@@ -75,7 +75,7 @@ const HeaderTop = () => {
             </svg>
           </div>
           <Link to={path.login}>
-            <span className='ml-2 hover:text-[#fe5716] transition duration-300 cursor-pointer'>
+            <span className='ml-2 cursor-pointer transition duration-300 hover:text-[#fe5716]'>
               Đăng nhập / Đăng ký
             </span>
           </Link>
@@ -94,29 +94,29 @@ const NavBar = () => {
     setIsMenuOpen(!isMenuOpen)
   }
   return (
-    <nav className='container xl:px-4 lg:px-4 md:px-6 sm:px-6 xs:px-12 py-3 bg-white' aria-label='Main Navigation'>
+    <nav className='container bg-white py-3 xs:px-12 sm:px-6 md:px-6 lg:px-4 xl:px-4' aria-label='Main Navigation'>
       <div className='grid grid-cols-12 items-center'>
         <div className='col-span-2 place-self-center'>
           <Link to={path.home} className='outline-none' aria-label='Home Page'>
-            <div className='xl:w-44 lg:w-40 md:w-36 sm:w-36 xs:w-32'>
-              <img src='src/assets/img/logo.png' className='w-full h-full' alt='logo' />
+            <div className='xs:w-32 sm:w-36 md:w-36 lg:w-40 xl:w-44'>
+              <img src='src/assets/img/logo.png' className='h-full w-full' alt='logo' />
             </div>
           </Link>
         </div>
-        <div className='col-span-8 px-16 h-full'>
-          <ul className='hidden xl:flex justify-around font-semibold h-full'>
+        <div className='col-span-8 h-full px-16'>
+          <ul className='hidden h-full justify-around font-semibold xl:flex'>
             {navigation.map((item) => {
               if (item.children) {
                 return (
                   <Popover
                     as={'li'}
                     key={item.id}
-                    className={`${useMatchRoute(item.href) ? 'navbar-active' : ''} flex items-center focus-visible:outline-none transition duration-300 hover:cursor-pointer hover:text-[#fe5617]`}
+                    className={`${useMatchRoute(item.href) ? 'navbar-active' : ''} flex items-center transition duration-300 hover:cursor-pointer hover:text-[#fe5617] focus-visible:outline-none`}
                     renderPopover={
                       <div className='max-w-[200px] rounded-sm border border-gray-200 bg-white text-sm shadow-lg'>
                         <ul className='p-3'>
                           {item.children.map((child) => (
-                            <li key={child} className='py-2 hover:text-[#fe5617] transition duration-300'>
+                            <li key={child} className='py-2 transition duration-300 hover:text-[#fe5617]'>
                               <Link to={path.service} className='outline-none'>
                                 {child}
                               </Link>
@@ -135,7 +135,7 @@ const NavBar = () => {
                       viewBox='0 0 24 24'
                       strokeWidth={1.5}
                       stroke='currentColor'
-                      className='w-4 h-4 ml-1'
+                      className='ml-1 h-4 w-4'
                     >
                       <path strokeLinecap='round' strokeLinejoin='round' d='m19.5 8.25-7.5 7.5-7.5-7.5' />
                     </svg>
@@ -156,30 +156,30 @@ const NavBar = () => {
             })}
           </ul>
         </div>
-        <div className='col-span-2 flex justify-center items-center'>
-          <div className='mx-2 xl:hidden block' onClick={toggleMenu}>
+        <div className='col-span-2 flex items-center justify-center'>
+          <div className='mx-2 block xl:hidden' onClick={toggleMenu}>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
               viewBox='0 0 24 24'
               strokeWidth={1.5}
               stroke='currentColor'
-              className='w-8 h-8'
+              className='h-8 w-8'
               role='img'
               aria-hidden='true'
             >
               <path strokeLinecap='round' strokeLinejoin='round' d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5' />
             </svg>
           </div>
-          <div className='hidden xl:flex justify-center items-center'>
-            <div className='mx-2 cursor-pointer hover:text-[#fe5716] transition duration-300'>
+          <div className='hidden items-center justify-center xl:flex'>
+            <div className='mx-2 cursor-pointer transition duration-300 hover:text-[#fe5716]'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 fill='none'
                 viewBox='0 0 24 24'
                 strokeWidth={1.5}
                 stroke='currentColor'
-                className='w-6 h-6'
+                className='h-6 w-6'
                 role='img'
                 aria-hidden='true'
               >
@@ -190,15 +190,15 @@ const NavBar = () => {
                 />
               </svg>
             </div>
-            <div className='border-r-2 border-r-black h-4'></div>
-            <div className='mx-2 cursor-pointer hover:text-[#fe5716] transition duration-300'>
+            <div className='h-4 border-r-2 border-r-black'></div>
+            <div className='mx-2 cursor-pointer transition duration-300 hover:text-[#fe5716]'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 fill='none'
                 viewBox='0 0 24 24'
                 strokeWidth={1.5}
                 stroke='currentColor'
-                className='w-6 h-6'
+                className='h-6 w-6'
                 role='img'
                 aria-hidden='true'
               >
@@ -210,14 +210,14 @@ const NavBar = () => {
               </svg>
             </div>
           </div>
-          <div className='relative ml-2 bg-[#fe5716] border-2 border-[#fe5716] p-3 text-white rounded-full hover:bg-white hover:cursor-pointer hover:text-black transition duration-300'>
+          <div className='relative ml-2 rounded-full border-2 border-[#fe5716] bg-[#fe5716] p-3 text-white transition duration-300 hover:cursor-pointer hover:bg-white hover:text-black'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
               viewBox='0 0 24 24'
               strokeWidth={1.5}
               stroke='currentColor'
-              className='w-6 h-6'
+              className='h-6 w-6'
               role='img'
               aria-hidden='true'
             >
@@ -227,16 +227,16 @@ const NavBar = () => {
                 d='M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z'
               />
             </svg>
-            <div className='absolute flex justify-center text-white bg-black text-sm w-5 h-5 rounded-full top-0 right-0'>
+            <div className='absolute right-0 top-0 flex h-5 w-5 justify-center rounded-full bg-black text-sm text-white'>
               1
             </div>
           </div>
         </div>
       </div>
       {isMenuOpen && (
-        <div className='fixed inset-0 bg-transparent bg-opacity-50 z-40'>
-          <div className='fixed top-0 left-0 lg:w-[35vw] md:w-[45vw] sm:w-[55vw] xs:w-full h-full bg-[#940c69] shadow-lg z-50'>
-            <div className='p-4 flex justify-end'>
+        <div className='fixed inset-0 z-40 bg-transparent bg-opacity-50'>
+          <div className='fixed left-0 top-0 z-50 h-full bg-[#940c69] shadow-lg xs:w-full sm:w-[55vw] md:w-[45vw] lg:w-[35vw]'>
+            <div className='flex justify-end p-4'>
               <button onClick={toggleMenu} className='text-white'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -244,7 +244,7 @@ const NavBar = () => {
                   viewBox='0 0 24 24'
                   strokeWidth={1.5}
                   stroke='currentColor'
-                  className='w-12 h-12'
+                  className='h-12 w-12'
                 >
                   <path
                     strokeLinecap='round'
@@ -254,9 +254,9 @@ const NavBar = () => {
                 </svg>
               </button>
             </div>
-            <ul className='flex flex-col text-white lg:text-2xl md:text-xl sm:text-xl xs:text-lg'>
-              <Link to={path.home} className='outline-none px-8 py-4' aria-label='Home Page'>
-                <img src='src/assets/img/logo-w.png' className='w-44 h-auto' alt='logo' />
+            <ul className='flex flex-col text-white xs:text-lg sm:text-xl md:text-xl lg:text-2xl'>
+              <Link to={path.home} className='px-8 py-4 outline-none' aria-label='Home Page'>
+                <img src='src/assets/img/logo-w.png' className='h-auto w-44' alt='logo' />
               </Link>
               {navigation.map((item) => (
                 <li key={item.name} className='px-8 py-4'>
@@ -266,13 +266,13 @@ const NavBar = () => {
                 </li>
               ))}
               <div className='flex px-6 py-8'>
-                <div className='w-14 h-14 bg-[#fe5617] p-3 rounded-full mx-2'>
+                <div className='mx-2 h-14 w-14 rounded-full bg-[#fe5617] p-3'>
                   <img src='src/assets/img/facebook-icon-svg.svg' alt='logo-facebook' />
                 </div>
-                <div className='w-14 h-14 bg-[#fe5617] p-3 rounded-full mx-2'>
+                <div className='mx-2 h-14 w-14 rounded-full bg-[#fe5617] p-3'>
                   <img src='src/assets/img/twitter-icon-svg.svg' alt='logo-facebook' />
                 </div>
-                <div className='w-14 h-14 bg-[#fe5617] p-3 rounded-full mx-2'>
+                <div className='mx-2 h-14 w-14 rounded-full bg-[#fe5617] p-3'>
                   <img src='src/assets/img/instagram-icon-svg.svg' alt='logo-facebook' />
                 </div>
               </div>
@@ -286,7 +286,7 @@ const NavBar = () => {
 
 export default function Header() {
   return (
-    <header className='fixed top-0 left-0 w-full h-auto z-50'>
+    <header className='absolute left-0 top-0 z-[100] h-auto w-full'>
       <HeaderTop />
       <NavBar />
     </header>

@@ -25,3 +25,15 @@ h1 {
 .navbar-active {
   color: #fe5617;
 }
+
+.slick-list {
+  padding: 40px 0;
+}
+
+.slick-slide {
+  padding: 0 10px;
+}
+
+.special-text-clip-path {
+  clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+}
